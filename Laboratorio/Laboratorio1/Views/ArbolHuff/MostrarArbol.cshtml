@@ -1,0 +1,27 @@
+﻿<h2>mOSTRAR CODIFGOS</h2>
+@model List<string>
+
+    <!--Form:
+    Index = Es el metodo al que vamos a llamar
+    FileUpload = El controlador donde se encuentra el metodo Index
+    FormMethod.Post = Tipo de metodo
+    multipart/form-data  = tipo de objeto-->
+
+        <h2>LIST OF codes</h2>
+
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Link</th>
+            </tr>
+            @for (var i = 0; i <= Model.Count - 1; i++)
+    {
+        <tr>
+            <td>@Model[i].codigo.ToString() </td>
+        </tr>
+        <tr>
+            <td>@Model[i].caracter.ToString() </td>
+        </tr>
+}
+        </table>
+
