@@ -1,0 +1,28 @@
+﻿<h2>DESCARGAR ARCHIVO COMPRIMIDO</h2>
+@model List<string>
+
+    <!--Form:
+    Index = Es el metodo al que vamos a llamar
+    FileUpload = El controlador donde se encuentra el metodo Index
+    FormMethod.Post = Tipo de metodo
+    multipart/form-data  = tipo de objeto-->
+    @using (Html.BeginForm("Download", "ReadText", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Actions</th>
+                <th></th>
+            </tr>
+        @for (var i = 0; i <= Model.Count - 1; i++)
+        {
+        <tr>
+
+            <td>@Html.ActionLink("Download", "Download", new { TxtName = @Model[i].ToString() }) </td>
+        </tr>
+             }
+        </table>
+
+    }
+
